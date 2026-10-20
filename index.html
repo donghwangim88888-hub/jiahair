@@ -1,128 +1,173 @@
 <!doctype html>
-<html lang="en"><head>
+<html lang="en" data-cur="en"><head>
 <meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Jia Hair · Hair salon in Chatswood</title>
-<meta name="description" content="Jia Hair, hair salon in Chatswood. 312 Victoria Ave, Chatswood NSW 2067. Call 0426 088 887.">
+<meta name="description" content="Jia Hair, hair salon in Chatswood. Cut, Colour, Perm, Treatment. 312 Victoria Ave, Chatswood NSW 2067. Call 0426 088 887.">
+<meta property="og:title" content="Jia Hair · Hair salon in Chatswood">
+<meta property="og:description" content="Cut, Colour, Perm, Treatment. 312 Victoria Ave, Chatswood. Call 0426 088 887.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f7f1e8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e231d'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='40' fill='%23d8bd8f' text-anchor='middle' font-style='italic'%3EJ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&family=Noto+Sans+KR:wght@400&family=Noto+Sans+SC:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&family=Noto+Sans+KR:wght@400;500&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--ivory:#f8f3ec;--cream:#efe6da;--taupe:#b9a796;--esp:#2e231d;--ink:#3a2e27;--mute:#6b5a4e;--gold:#a9875a;--rose:#c9a39a}
+:root{--iv:#f7f1e8;--cr:#ece2d4;--esp:#2a1f19;--ink:#2f251f;--mute:#5a4a3f;--gold:#8e6c3f;--gl:#d8bd8f;--line:rgba(142,108,63,.28)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--ivory);color:var(--ink);font-family:Jost,"Noto Sans KR","Noto Sans SC",sans-serif;font-size:19px;line-height:1.7;font-weight:400}
+body{margin:0;background:var(--iv);color:var(--ink);font-family:Jost,"Noto Sans KR","Noto Sans SC",sans-serif;font-size:19px;line-height:1.75}
+html[data-cur=ko] body{font-family:"Noto Sans KR",Jost,sans-serif}html[data-cur=zh] body{font-family:"Noto Sans SC",Jost,sans-serif}
 a{color:inherit;text-decoration:none}
+[data-lang]{display:none}html[data-cur=en] [data-lang=en],html[data-cur=ko] [data-lang=ko],html[data-cur=zh] [data-lang=zh]{display:revert}
 .serif{font-family:"Cormorant Garamond",Georgia,serif}
-.ml{font-family:"Noto Sans KR","Noto Sans SC",sans-serif;color:var(--mute);font-size:16px;letter-spacing:.02em}
-header{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:22px 6vw;background:rgba(248,243,236,.82);backdrop-filter:blur(8px);border-bottom:1px solid rgba(169,135,90,.25)}
-.logo{font-family:"Cormorant Garamond",serif;font-size:26px;letter-spacing:.32em;text-transform:uppercase;color:var(--esp)}
-nav a{font-size:14px;letter-spacing:.24em;text-transform:uppercase;margin-left:40px;color:var(--ink)}
-nav a:hover{color:var(--gold)}
-.hero{position:relative;min-height:min(100vh,880px);display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;
- background:var(--hero-img,none) center/cover,radial-gradient(ellipse at 20% 15%,#fbf6ef 0%,transparent 55%),radial-gradient(ellipse at 85% 80%,rgba(201,163,154,.45) 0%,transparent 55%),radial-gradient(ellipse at 70% 20%,rgba(185,167,150,.35),transparent 50%),linear-gradient(160deg,#f6efe5,#e9ddcf)}
-.hero:before{content:"";position:absolute;width:min(78vw,620px);aspect-ratio:1;border:1px solid rgba(169,135,90,.35);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%)}
-.hero:after{content:"";position:absolute;width:min(62vw,480px);aspect-ratio:1;border:1px solid rgba(169,135,90,.18);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%)}
-.hero-in{position:relative;z-index:2;padding:120px 24px 80px}
-.eyebrow{font-size:13px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold)}
-h1{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(76px,14vw,180px);line-height:.95;margin:22px 0 18px;color:var(--esp);letter-spacing:.01em}
-h1 em{font-style:italic;color:var(--gold)}
-.rule{width:64px;height:1px;background:var(--gold);margin:28px auto}
-.tag{font-size:22px;letter-spacing:.06em;color:var(--ink)}
-.btn{display:inline-block;margin-top:34px;padding:18px 38px;border:1px solid var(--esp);font-size:15px;letter-spacing:.24em;text-transform:uppercase;color:var(--esp);transition:.3s}
-.btn:hover{background:var(--esp);color:var(--ivory)}
-section{padding:130px 6vw}
-.head{text-align:center;margin-bottom:70px}
-h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(46px,6vw,72px);margin:14px 0 6px;color:var(--esp);line-height:1.1}
-.intro{max-width:760px;margin:0 auto;text-align:center}
-.intro p.big{font-family:"Cormorant Garamond",serif;font-size:clamp(28px,3.4vw,40px);line-height:1.4;color:var(--esp);margin:0 0 24px;font-style:italic}
-.svc{background:var(--cream)}
-.list{max-width:980px;margin:0 auto;border-top:1px solid rgba(169,135,90,.4)}
-.item{display:grid;grid-template-columns:110px 1fr auto;gap:30px;align-items:baseline;padding:38px 0;border-bottom:1px solid rgba(169,135,90,.4)}
-.num{font-family:"Cormorant Garamond",serif;font-size:30px;color:var(--gold);font-style:italic}
-.item h3{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:44px;margin:0;color:var(--esp);line-height:1.1}
-.item p{margin:8px 0 0;color:var(--mute)}
-.item .ml{text-align:right;white-space:nowrap}
-.note{text-align:center;margin-top:50px;color:var(--mute);font-size:17px;letter-spacing:.06em}
-.mood{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:18px;padding:0 6vw;margin:-40px 0 0}
-.slot{aspect-ratio:4/5;background:var(--img,none) center/cover,linear-gradient(170deg,#d9c7b6,#b9a391);position:relative;display:flex;align-items:flex-end;padding:28px;color:#fff8ef}
-.slot:nth-child(2){background:var(--img,none) center/cover,linear-gradient(200deg,#e8d6cd,#c9a39a);margin-top:60px}
-.slot:nth-child(3){background:var(--img,none) center/cover,linear-gradient(160deg,#4a3a30,#2e231d)}
-.slot span{font-family:"Cormorant Garamond",serif;font-size:34px;font-style:italic}
-.slot:before{content:"";position:absolute;inset:16px;border:1px solid rgba(255,248,239,.45)}
-.visit-grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:0;background:#fff;box-shadow:0 30px 80px -40px rgba(46,35,29,.35)}
-.card{padding:64px 56px;background:var(--esp);color:#f1e8dc}
-.card h3{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:40px;margin:0 0 6px;color:#fff}
-.card .lab{font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:#d8bb8e;margin-top:36px}
-.card .ml{color:#cbbcab}
-.hrs{display:flex;justify-content:space-between;border-bottom:1px solid rgba(216,187,142,.3);padding:12px 0;font-size:20px}
-.card a.tel{display:block;font-family:"Cormorant Garamond",serif;font-size:44px;color:#fff;margin-top:6px}
-.card .btn{border-color:#d8bb8e;color:#f1e8dc}.card .btn:hover{background:#d8bb8e;color:var(--esp)}
-iframe{width:100%;height:100%;min-height:440px;border:0;display:block;filter:sepia(.25) saturate(.8)}
-footer{text-align:center;padding:70px 6vw 130px;color:var(--mute);font-size:16px}
-footer .logo{display:block;margin-bottom:12px}
+.lab{font-size:14px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:500}
+header{position:fixed;inset:0 0 auto;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:18px 6vw;background:rgba(247,241,232,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{font-family:"Cormorant Garamond",serif;font-size:26px;letter-spacing:.3em;color:var(--esp)}
+.hr{display:flex;align-items:center;gap:34px}
+nav a{font-size:14px;letter-spacing:.22em;text-transform:uppercase;position:relative}
+nav a:after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .4s}
+nav a:hover:after{transform:scaleX(1)}
+.lg{display:flex;border:1px solid var(--line);border-radius:99px;padding:3px}
+.lg button{border:0;background:none;font:500 15px Jost,"Noto Sans KR","Noto Sans SC",sans-serif;color:var(--mute);padding:7px 13px;border-radius:99px;cursor:pointer;min-width:44px;transition:.3s}
+.lg button[aria-pressed=true]{background:var(--esp);color:var(--iv)}
+.lg button:hover:not([aria-pressed=true]){color:var(--esp)}
+/* hero */
+.hero{position:relative;min-height:min(100vh,900px);display:grid;place-items:center;text-align:center;overflow:hidden;
+background:radial-gradient(ellipse at 18% 12%,#fdf9f3,transparent 55%),radial-gradient(ellipse at 85% 85%,rgba(201,163,154,.38),transparent 55%),linear-gradient(160deg,#f5ede2,#e6d8c6)}
+.hero:before{content:"";position:absolute;inset:-50%;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.45) 50%,transparent 60%);animation:shim 14s ease-in-out infinite}
+.ring{position:absolute;top:50%;left:50%;border:1px solid var(--line);border-radius:50%;transform:translate(-50%,-50%);aspect-ratio:1}
+.r1{width:min(84vw,640px)}.r2{width:min(66vw,500px);opacity:.55}
+.hin{position:relative;z-index:2;padding:130px 24px 90px}
+h1{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(84px,15vw,190px);line-height:.92;margin:26px 0 8px;color:var(--esp);letter-spacing:-.01em}
+h1 em{color:var(--gold)}
+.tag{font-size:23px;color:var(--mute);margin:0}
+.rule{width:56px;height:1px;background:var(--gold);margin:30px auto}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--esp);color:var(--iv);padding:19px 36px;border-radius:99px;font-size:19px;letter-spacing:.06em;transition:transform .35s,box-shadow .35s,background .35s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(42,31,25,.5);background:#3c2d24}
+.btn svg{width:20px;height:20px}
+.meta{margin-top:24px;font-size:17px;color:var(--mute);letter-spacing:.04em}
+.fi{opacity:0;transform:translateY(16px);animation:fi 1.1s cubic-bezier(.2,.7,.2,1) forwards}
+.d1{animation-delay:.15s}.d2{animation-delay:.35s}.d3{animation-delay:.55s}.d4{animation-delay:.75s}
+@keyframes fi{to{opacity:1;transform:none}}@keyframes shim{0%,100%{transform:translateX(-30%)}50%{transform:translateX(30%)}}
+/* signature */
+.sig{background:var(--esp);color:var(--iv);padding:56px 6vw;text-align:center}
+.sig .lab{color:var(--gl)}
+.sigw{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,7vw,88px);line-height:1.1;margin-top:14px;letter-spacing:.02em}
+.sigw i{color:var(--gl);font-style:normal;padding:0 .35em;font-size:.6em;vertical-align:middle}
+section.s{padding:120px 6vw;max-width:1240px;margin:auto}
+.hd{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:end;border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:56px}
+.num{font-family:"Cormorant Garamond",serif;font-size:64px;line-height:1;color:var(--gold);font-style:italic}
+h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(44px,5.4vw,68px);line-height:1.05;margin:6px 0 0;color:var(--esp)}
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{background:#fffaf3;border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:transform .45s,box-shadow .45s}
+.card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -24px rgba(42,31,25,.35)}
+.ph{aspect-ratio:4/5;display:grid;place-items:center;position:relative;overflow:hidden}
+.ph span{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:120px;color:rgba(255,255,255,.75);line-height:1}
+.ph:after{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.5)}
+.p1{background:linear-gradient(160deg,#c9b39b,#8f7660)}.p2{background:linear-gradient(160deg,#c99f8f,#8d5f52)}.p3{background:linear-gradient(160deg,#b9ae9a,#6f6655)}.p4{background:linear-gradient(160deg,#a99586,#4f3f35)}
+.cb{padding:24px 24px 28px}
+h3{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:34px;margin:0 0 6px;color:var(--esp)}
+.cb p{margin:0;color:var(--mute);font-size:18px}
+.note{margin-top:40px;text-align:center;font-size:20px;color:var(--esp)}
+.note b{font-weight:500;border-bottom:1px solid var(--gold)}
+.band{background:var(--cr)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;counter-reset:s}
+.st{padding:8px 40px;border-left:1px solid var(--line)}.st:first-child{border:0;padding-left:0}
+.st .lab{display:block;margin-bottom:12px}
+.st h3{font-size:38px}.st p{margin:0;color:var(--mute)}
+.st a{color:var(--esp);border-bottom:1px solid var(--gold)}
+.visit{display:grid;grid-template-columns:1fr 1.25fr;gap:0;background:#fffaf3;border:1px solid var(--line);border-radius:6px;overflow:hidden;box-shadow:0 30px 60px -40px rgba(42,31,25,.4)}
+.vi{padding:52px 48px}
+.vi dl{margin:0}.vi dt{margin-top:28px}.vi dt:first-child{margin-top:0}
+.vi dd{margin:6px 0 0;font-size:21px;color:var(--esp)}
+.vi dd small{display:block;font-size:18px;color:var(--mute)}
+.map{min-height:460px;position:relative;background:linear-gradient(160deg,#e6d8c6,#cdb9a2)}.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:saturate(.75) contrast(1.02)}
+.vi .btn{margin-top:36px}
+.faq{max-width:860px}
+details{border-bottom:1px solid var(--line);padding:22px 0}
+summary{cursor:pointer;list-style:none;font-family:"Cormorant Garamond",serif;font-size:30px;color:var(--esp);display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--gold);font-size:34px;transition:transform .3s}details[open] summary:after{transform:rotate(45deg)}
+details p{margin:12px 0 0;color:var(--mute)}
+footer{background:var(--esp);color:#e9dfd1;padding:84px 6vw 120px;text-align:center}
+footer .logo{color:var(--iv);font-size:34px}
+footer .ft{margin:10px 0 30px;color:var(--gl);letter-spacing:.06em}
+footer p{margin:6px 0;font-size:18px}footer a{border-bottom:1px solid rgba(216,189,143,.5)}
+footer .sm{margin-top:40px;font-size:15px;color:#b9a796;letter-spacing:.12em}
 .bar{display:none}
-@media(max-width:760px){
- header{padding:16px 22px}.logo{font-size:21px}nav{display:none}
- section{padding:96px 24px}
- .item{grid-template-columns:56px 1fr;gap:14px}.item .ml{grid-column:2;text-align:left}.item h3{font-size:38px}
- .mood{grid-template-columns:1fr 1fr;padding:0 24px}.slot:first-child{grid-column:1/3;aspect-ratio:4/3}.slot:nth-child(2){margin-top:0}
- .visit-grid{grid-template-columns:1fr}.card{padding:48px 30px}iframe{min-height:340px}
- .bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--esp);color:#fff;justify-content:center;align-items:center;gap:12px;padding:18px 16px calc(18px + env(safe-area-inset-bottom));font-size:18px;letter-spacing:.14em;text-transform:uppercase;border-top:1px solid var(--gold)}
- .bar small{font-family:"Noto Sans KR","Noto Sans SC",sans-serif;letter-spacing:0;text-transform:none;color:#d8bb8e;font-size:15px}
-}
-</style></head>
-<body>
-<header><a class="logo" href="#top">Jia Hair</a>
-<nav><a href="#services">Services</a><a href="#visit">Visit</a><a href="tel:0426088887">Call</a></nav></header>
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}.rv.on{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.fi,.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+@media (max-width:900px){.svc{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr}.st{border:0;border-top:1px solid var(--line);padding:28px 0}.st:first-child{border:0;padding-top:0}.visit{grid-template-columns:1fr}.map{min-height:340px}}
+@media (max-width:640px){nav{display:none}header{padding:14px 5vw}.logo{font-size:21px}.lg button{padding:6px 10px;font-size:15px}
+section.s{padding:84px 6vw}.hd{gap:18px;margin-bottom:40px}.num{font-size:48px}.svc{gap:14px}.cb{padding:18px 16px 22px}h3{font-size:28px}.ph span{font-size:84px}
+.vi{padding:36px 26px}.hin{padding:120px 20px 80px}.tag{font-size:21px}
+.bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;justify-content:center;align-items:center;gap:10px;background:var(--esp);color:var(--iv);padding:18px;border-radius:99px;font-size:19px;letter-spacing:.04em;box-shadow:0 12px 30px -10px rgba(0,0,0,.45)}
+.bar svg{width:20px;height:20px}}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><symbol id="ph" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></symbol></svg>
+<header><a class="logo" href="#top">JIA HAIR</a>
+<div class="hr"><nav><a href="#services"><span data-lang="en">Services</span><span data-lang="ko">서비스</span><span data-lang="zh">服务</span></a><a href="#visit"><span data-lang="en">Visit</span><span data-lang="ko">오시는 길</span><span data-lang="zh">到店</span></a></nav>
+<div class="lg" role="group" aria-label="Language"><button data-set="en" aria-pressed="true">EN</button><button data-set="ko" aria-pressed="false">한</button><button data-set="zh" aria-pressed="false">中</button></div></div></header>
 
 <main id="top">
-<!-- Photo later: add style="--hero-img:url(hero.jpg)" to .hero -->
-<section class="hero"><div class="hero-in">
-<div class="eyebrow">Chatswood · Sydney</div>
-<h1>Jia <em>Hair</em></h1>
-<div class="tag">Hair salon in Chatswood</div>
-<div class="ml" style="margin-top:8px">채스우드 헤어살롱 · 车士活美发沙龙</div>
-<div class="rule"></div>
-<a class="btn" href="tel:0426088887">Call 0426 088 887</a>
-<div class="ml" style="margin-top:14px">전화 예약 · 电话预约</div>
+<section class="hero"><div class="ring r1"></div><div class="ring r2"></div>
+<div class="hin">
+<div class="lab fi d1">Chatswood · NSW</div>
+<h1 class="fi d2">Jia <em>Hair</em></h1>
+<p class="tag fi d3"><span data-lang="en">Hair salon in Chatswood</span><span data-lang="ko">채스우드 헤어살롱</span><span data-lang="zh">Chatswood 美发沙龙</span></p>
+<div class="rule fi d3"></div>
+<div class="fi d4"><a class="btn" href="tel:0426088887"><svg><use href="#ph"/></svg>0426 088 887</a>
+<div class="meta"><span data-lang="en">Mon–Sat 9:00am–6:00pm · Sunday closed</span><span data-lang="ko">월–토 오전 9:00–오후 6:00 · 일요일 휴무</span><span data-lang="zh">周一至周六 9:00–18:00 · 周日休息</span></div></div>
 </div></section>
 
-<section><div class="intro">
-<div class="eyebrow">Welcome</div>
-<p class="big" style="margin-top:20px">Calm, considered hair care on Victoria Avenue — cut, colour, perm and treatment, tailored to you.</p>
-<p class="ml">English · 한국어 · 中文 상담 가능 / 可用中文沟通</p>
-</div></section>
+<div class="sig"><div class="lab"><span data-lang="en">Signature</span><span data-lang="ko">시그니처</span><span data-lang="zh">招牌</span></div>
+<div class="sigw"><span data-lang="en">Cut<i>·</i>Colour<i>·</i>Perm</span><span data-lang="ko">커트<i>·</i>염색<i>·</i>펌</span><span data-lang="zh">剪发<i>·</i>染发<i>·</i>烫发</span></div></div>
 
-<div class="mood" aria-hidden="true">
-<div class="slot"><span>Cut</span></div><div class="slot"><span>Colour</span></div><div class="slot"><span>Care</span></div>
+<section class="s" id="services">
+<div class="hd rv"><div class="num">01</div><div><div class="lab"><span data-lang="en">Services</span><span data-lang="ko">서비스</span><span data-lang="zh">服务项目</span></div><h2><span data-lang="en">What we do</span><span data-lang="ko">시술 안내</span><span data-lang="zh">我们的服务</span></h2></div></div>
+<div class="svc">
+<div class="card rv"><div class="ph p1"><span>I</span></div><div class="cb"><h3><span data-lang="en">Cut</span><span data-lang="ko">커트</span><span data-lang="zh">剪发</span></h3><p><span data-lang="en">Haircuts and styling.</span><span data-lang="ko">헤어 커트와 스타일링.</span><span data-lang="zh">剪发与造型。</span></p></div></div>
+<div class="card rv"><div class="ph p2"><span>II</span></div><div class="cb"><h3><span data-lang="en">Colour</span><span data-lang="ko">염색</span><span data-lang="zh">染发</span></h3><p><span data-lang="en">Hair colour.</span><span data-lang="ko">헤어 염색.</span><span data-lang="zh">头发染色。</span></p></div></div>
+<div class="card rv"><div class="ph p3"><span>III</span></div><div class="cb"><h3><span data-lang="en">Perm</span><span data-lang="ko">펌</span><span data-lang="zh">烫发</span></h3><p><span data-lang="en">Perms for curl and volume.</span><span data-lang="ko">컬과 볼륨을 위한 펌.</span><span data-lang="zh">卷发与蓬松烫。</span></p></div></div>
+<div class="card rv"><div class="ph p4"><span>IV</span></div><div class="cb"><h3><span data-lang="en">Treatment</span><span data-lang="ko">트리트먼트</span><span data-lang="zh">护理</span></h3><p><span data-lang="en">Hair care treatments.</span><span data-lang="ko">모발 케어 트리트먼트.</span><span data-lang="zh">头发护理。</span></p></div></div>
 </div>
-
-<section class="svc" id="services" style="margin-top:-200px;padding-top:300px">
-<div class="head"><div class="eyebrow">Services</div><h2>What we do</h2><div class="ml">서비스 · 服务项目</div></div>
-<div class="list">
-<div class="item"><div class="num">01</div><div><h3>Cut</h3><p>Precise, wearable shapes for every length and texture.</p></div><div class="ml">커트 · 剪发</div></div>
-<div class="item"><div class="num">02</div><div><h3>Colour</h3><p>Soft, natural tones through to full colour and grey coverage.</p></div><div class="ml">염색 · 染发</div></div>
-<div class="item"><div class="num">03</div><div><h3>Perm</h3><p>Gentle waves and volume, from digital to classic perms.</p></div><div class="ml">펌 · 烫发</div></div>
-<div class="item"><div class="num">04</div><div><h3>Treatment</h3><p>Restorative care for healthy, glossy, manageable hair.</p></div><div class="ml">트리트먼트 · 护理</div></div>
-</div>
-<p class="note">Prices confirmed when you call<br><span class="ml">가격은 전화로 안내해 드립니다 · 价格请致电咨询</span></p>
+<p class="note rv"><b><span data-lang="en">Prices confirmed when you call</span><span data-lang="ko">가격은 전화로 안내해 드립니다</span><span data-lang="zh">价格请致电确认</span></b></p>
 </section>
 
-<section id="visit">
-<div class="head"><div class="eyebrow">Visit</div><h2>Find us</h2><div class="ml">오시는 길 · 到店指南</div></div>
-<div class="visit-grid">
-<div class="card">
-<h3>Jia Hair</h3><div class="ml">Hair salon in Chatswood</div>
-<div class="lab">Address</div>
-<p style="margin:8px 0 0;font-size:21px">312 Victoria Ave<br>Chatswood NSW 2067</p>
-<div class="lab">Hours · 영업시간 · 营业时间</div>
-<div class="hrs"><span>Mon – Sat</span><span>9:00am – 6:00pm</span></div>
-<div class="hrs"><span>Sunday</span><span>Closed</span></div>
-<div class="lab">Call to book</div>
-<a class="tel" href="tel:0426088887">0426 088 887</a>
-<div class="ml">전화로 예약하세요 · 欢迎来电预约</div>
-</div>
-<iframe title="Map: 312 Victoria Ave, Chatswood NSW 2067" src="https://www.google.com/maps?q=312+Victoria+Ave+Chatswood+NSW+2067&output=embed"></iframe>
-</div></section>
+<div class="band"><section class="s">
+<div class="hd rv"><div class="num">02</div><div><div class="lab"><span data-lang="en">How to visit</span><span data-lang="ko">방문 방법</span><span data-lang="zh">到店方式</span></div><h2><span data-lang="en">Three simple steps</span><span data-lang="ko">간단한 세 단계</span><span data-lang="zh">简单三步</span></h2></div></div>
+<div class="steps">
+<div class="st rv"><span class="lab">Step 1</span><h3><span data-lang="en">Call</span><span data-lang="ko">전화</span><span data-lang="zh">致电</span></h3><p><a href="tel:0426088887">0426 088 887</a></p></div>
+<div class="st rv"><span class="lab">Step 2</span><h3><span data-lang="en">Pick a time</span><span data-lang="ko">시간 선택</span><span data-lang="zh">选择时间</span></h3><p><span data-lang="en">Mon–Sat, 9:00am–6:00pm.</span><span data-lang="ko">월–토, 오전 9시–오후 6시.</span><span data-lang="zh">周一至周六 9:00–18:00。</span></p></div>
+<div class="st rv"><span class="lab">Step 3</span><h3><span data-lang="en">Visit</span><span data-lang="ko">방문</span><span data-lang="zh">到店</span></h3><p>312 Victoria Ave, Chatswood NSW 2067</p></div>
+</div></section></div>
+
+<section class="s" id="visit">
+<div class="hd rv"><div class="num">03</div><div><div class="lab"><span data-lang="en">Visit</span><span data-lang="ko">오시는 길</span><span data-lang="zh">地址</span></div><h2><span data-lang="en">Find us</span><span data-lang="ko">찾아오시는 길</span><span data-lang="zh">如何找到我们</span></h2></div></div>
+<div class="visit rv"><div class="vi"><dl>
+<dt class="lab"><span data-lang="en">Address</span><span data-lang="ko">주소</span><span data-lang="zh">地址</span></dt><dd>312 Victoria Ave<small>Chatswood NSW 2067</small></dd>
+<dt class="lab"><span data-lang="en">Hours</span><span data-lang="ko">영업시간</span><span data-lang="zh">营业时间</span></dt><dd><span data-lang="en">Mon–Sat 9:00am–6:00pm</span><span data-lang="ko">월–토 오전 9:00–오후 6:00</span><span data-lang="zh">周一至周六 9:00–18:00</span><small><span data-lang="en">Sunday closed</span><span data-lang="ko">일요일 휴무</span><span data-lang="zh">周日休息</span></small></dd>
+<dt class="lab"><span data-lang="en">Phone</span><span data-lang="ko">전화</span><span data-lang="zh">电话</span></dt><dd><a href="tel:0426088887">0426 088 887</a></dd></dl>
+<a class="btn" href="tel:0426088887"><svg><use href="#ph"/></svg><span data-lang="en">Call to book</span><span data-lang="ko">전화 예약</span><span data-lang="zh">致电预约</span></a></div>
+<div class="map"><iframe title="Map: 312 Victoria Ave, Chatswood" src="https://www.google.com/maps?q=312+Victoria+Ave+Chatswood+NSW+2067&output=embed"></iframe></div></div>
+</section>
+
+<div class="band"><section class="s faq">
+<div class="hd rv"><div class="num">04</div><div><div class="lab">FAQ</div><h2><span data-lang="en">Questions</span><span data-lang="ko">자주 묻는 질문</span><span data-lang="zh">常见问题</span></h2></div></div>
+<details class="rv"><summary><span data-lang="en">How do I book?</span><span data-lang="ko">예약은 어떻게 하나요?</span><span data-lang="zh">如何预约？</span></summary><p><span data-lang="en">Call</span><span data-lang="ko">전화:</span><span data-lang="zh">请致电</span> <a href="tel:0426088887">0426 088 887</a>.</p></details>
+<details class="rv"><summary><span data-lang="en">What are your opening hours?</span><span data-lang="ko">영업시간은 어떻게 되나요?</span><span data-lang="zh">营业时间是？</span></summary><p><span data-lang="en">Mon–Sat 9:00am–6:00pm, Sunday closed.</span><span data-lang="ko">월–토 오전 9:00–오후 6:00, 일요일 휴무.</span><span data-lang="zh">周一至周六 9:00–18:00，周日休息。</span></p></details>
+<details class="rv"><summary><span data-lang="en">How much does it cost?</span><span data-lang="ko">가격은 얼마인가요?</span><span data-lang="zh">价格是多少？</span></summary><p><span data-lang="en">Prices are confirmed when you call.</span><span data-lang="ko">가격은 전화로 안내해 드립니다.</span><span data-lang="zh">价格请致电确认。</span></p></details>
+</section></div>
 </main>
-<footer><span class="logo">Jia Hair</span>312 Victoria Ave, Chatswood NSW 2067 · <a href="tel:0426088887">0426 088 887</a></footer>
-<a class="bar" href="tel:0426088887">Call to book · 0426 088 887 <small>전화 · 致电</small></a>
-</body></html>
+
+<footer><div class="logo">JIA HAIR</div><div class="ft"><span data-lang="en">Hair salon in Chatswood</span><span data-lang="ko">채스우드 헤어살롱</span><span data-lang="zh">Chatswood 美发沙龙</span></div>
+<p>312 Victoria Ave, Chatswood NSW 2067</p><p><a href="tel:0426088887">0426 088 887</a></p>
+<p><span data-lang="en">Mon–Sat 9:00am–6:00pm · Sunday closed</span><span data-lang="ko">월–토 오전 9:00–오후 6:00 · 일요일 휴무</span><span data-lang="zh">周一至周六 9:00–18:00 · 周日休息</span></p>
+<div class="sm">CUT · COLOUR · PERM · TREATMENT</div></footer>
+<a class="bar" href="tel:0426088887"><svg><use href="#ph"/></svg><span data-lang="en">Call 0426 088 887</span><span data-lang="ko">전화 0426 088 887</span><span data-lang="zh">致电 0426 088 887</span></a>
+<script>
+(function(){var h=document.documentElement,b=document.querySelectorAll('[data-set]');
+function set(l){h.dataset.cur=l;h.lang=l==='zh'?'zh-Hans':l;b.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.set===l)});try{localStorage.jl=l}catch(e){}}
+b.forEach(function(x){x.onclick=function(){set(x.dataset.set)}});try{if(localStorage.jl)set(localStorage.jl)}catch(e){}
+var r=document.querySelectorAll('.rv');if(!('IntersectionObserver'in window)||matchMedia('(prefers-reduced-motion:reduce)').matches){r.forEach(function(e){e.classList.add('on')});return}
+var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');o.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px'});r.forEach(function(e){o.observe(e)})})();
+</script></body></html>
