@@ -337,7 +337,8 @@ html[lang=ko] .work-hero h1,html[lang=zh-HK] .work-hero h1{font:700 clamp(30px,7
 .work-gallery{padding-top:40px}
 .work-gallery .gallery-grid{grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:1fr;gap:28px;overflow:visible;margin-inline:0;padding-inline:0}
 @media (min-width:600px){.work-gallery .gallery-grid{grid-template-columns:repeat(2,1fr)}}
-@media (min-width:900px){.work-hero{padding:88px 0 16px}.work-gallery .gallery-grid{grid-template-columns:repeat(3,1fr)}}
+.work-gallery .gallery-card:nth-child(2){margin-top:0}
+@media (min-width:900px){.work-hero{padding:88px 0 16px}.work-gallery .gallery-grid{grid-template-columns:repeat(3,1fr)}.work-gallery .gallery-card:nth-child(3n+2){margin-top:64px}}
 .work-cta{padding-block:72px 96px}
 .work-cta-card{display:grid;gap:24px;padding:32px 24px;border-radius:28px;background:var(--deep);color:var(--on-deep)}
 .work-cta-card .eyebrow{color:#9fc6f2}
