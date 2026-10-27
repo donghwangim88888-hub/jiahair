@@ -49,6 +49,13 @@
     preferred.addEventListener('input', updateSMS);
     stylist.addEventListener('input', updateSMS);
     consultation.addEventListener('change', updateSMS);
+    stylist.addEventListener('change', updateSMS);
+    document.querySelectorAll('[data-stylist]').forEach(link => {
+      link.addEventListener('click', () => {
+        stylist.value = link.dataset.stylist;
+        updateSMS();
+      });
+    });
     referenceClear.addEventListener('click', () => setReference(''));
     document.querySelectorAll('[data-gallery]').forEach(link => {
       link.addEventListener('click', () => setReference(link.dataset.gallery));
