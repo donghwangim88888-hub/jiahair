@@ -415,6 +415,13 @@ html[lang=ko] .stylist-card h3,html[lang=zh-HK] .stylist-card h3{font:700 24px/1
 .stylist-actions{position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:10px}
 .stylist-book{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 20px;border-radius:12px;background:var(--blue);color:#fff;font-weight:700;font-size:15px;transition:background .25s}
 .stylist-book:hover{background:var(--blue-hover)}
+/* A stylist's own Instagram: pink pill with the handle, on her card, the home gallery teaser and work.html */
+.stylist-ig{position:relative;z-index:1;justify-self:start;display:inline-flex;align-items:center;gap:12px;margin-top:10px;padding:9px 18px 9px 10px;border-radius:16px;background:#fff6fb;border:1.5px solid #f6c6de;color:var(--ink);font-weight:700;font-size:16px;line-height:1.25;transition:transform .25s var(--ease),border-color .25s}
+.stylist-ig:hover{transform:translateY(-1px);border-color:#ec8cc0}
+.stylist-ig .ig-icon{width:34px;height:34px}
+.stylist-ig small{display:block;font-size:12.5px;font-weight:600;color:var(--muted)}
+.teaser-actions,.ig-card-links{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px}
+.teaser-actions .stylist-ig,.ig-card-links .stylist-ig{margin-top:0}
 .external-booking{display:grid;gap:18px;padding:26px 24px;border-radius:24px;background:#fff;box-shadow:0 24px 48px -40px rgba(15,42,68,.45)}
 .external-booking .eyebrow{margin-bottom:6px}
 .online-title{font:400 30px/1.15 var(--serif);color:var(--deep)}
