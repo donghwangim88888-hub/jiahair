@@ -103,9 +103,10 @@ html[lang=ko] .hero h1 em,html[lang=zh-HK] .hero h1 em{font-style:normal;color:v
 .hero-note{margin-top:12px;font-size:13px;line-height:1.5;color:var(--muted)}
 @media (min-width:760px){
   .hero{display:grid;align-items:center;min-height:clamp(560px,52vw,780px);overflow:hidden}
-  .hero-media{position:absolute;inset:0;aspect-ratio:auto}
-  .hero-media img{object-position:92% 30%}
-  .hero-media::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.85) 30%,rgba(255,255,255,0) 58%)}
+  .hero-media{position:absolute;inset:0 0 0 auto;width:min(58%,980px);aspect-ratio:auto}
+  .hero-media img{object-position:50% 38%}
+  /* A long white fade lets the hair drift into the page behind the headline. */
+  .hero-media::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.6) 20%,rgba(255,255,255,0) 44%)}
   .hero-media figcaption{right:20px;bottom:20px;z-index:1}
   .hero-copy{padding:72px 0 96px}
   .hero-inner{max-width:560px}
@@ -187,9 +188,14 @@ html[lang=zh-HK] .ig-card h3{letter-spacing:0}
 
 /* KEUNE colour */
 .keune{padding-top:104px}
-.keune-banner{position:relative;overflow:hidden;border-radius:24px;background:#d8c7ae}
-.keune-banner img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:62% 30%}
-.keune-banner figcaption{position:absolute;right:12px;bottom:12px;padding:5px 10px;border-radius:8px;background:rgba(255,255,255,.85);font-size:11.5px;font-weight:600;color:var(--muted)}
+.tone-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tone-pair figure{position:relative;margin:0;overflow:hidden;border-radius:24px;background:var(--sky)}
+.tone-pair img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}
+.tone-pair figcaption{position:absolute;left:10px;right:10px;bottom:10px;padding:10px 12px;border-radius:16px;background:rgba(255,255,255,.92);color:var(--deep)}
+.tone-pair strong{display:block;font-size:17px;font-weight:700;letter-spacing:-.02em}
+.tone-pair span{display:block;margin-top:2px;font-size:12.5px;line-height:1.4;color:var(--muted)}
+.tone-note{margin-top:14px;font-size:15.5px;color:var(--muted)}
+.tone-note small{display:block;margin-top:4px;font-size:12px}
 .keune-grid{display:grid;gap:32px;margin-top:40px}
 .keune-intro{margin:20px 0 26px;font-size:17.5px;color:var(--muted);max-width:30em}
 .keune-facts{display:grid;gap:12px}
@@ -200,7 +206,7 @@ html[lang=zh-HK] .ig-card h3{letter-spacing:0}
 .keune-foot{display:flex;align-items:center;gap:16px;margin-top:24px}
 .shelf{flex-shrink:0;width:84px;aspect-ratio:3/4;overflow:hidden;border-radius:14px}
 .shelf img{width:100%;height:100%;object-fit:cover}
-@media (min-width:760px){.keune-banner img{aspect-ratio:21/8}.keune-banner{border-radius:32px}}
+@media (min-width:760px){.tone-pair{gap:18px}.tone-pair figure{border-radius:32px}.tone-pair img{aspect-ratio:1/1;object-position:50% 30%}.tone-pair figcaption{left:18px;right:auto;bottom:18px;padding:14px 18px}.tone-pair strong{font-size:20px}.tone-pair span{font-size:14px}}
 @media (min-width:900px){.keune{padding-top:128px}.keune-grid{grid-template-columns:.9fr 1.1fr;gap:72px;align-items:start;margin-top:56px}}
 
 /* Team */
@@ -300,26 +306,20 @@ details p{padding:0 52px 24px 0;color:var(--muted)}
 .product-grid::-webkit-scrollbar{display:none}
 .product-card{scroll-snap-align:start;display:grid;align-content:start;gap:4px;padding:12px 12px 20px;border-radius:22px;background:#fff;box-shadow:0 22px 40px -34px rgba(15,42,68,.5);transition:transform .35s var(--ease),box-shadow .35s}
 .product-card:hover{transform:translateY(-4px);box-shadow:0 30px 48px -34px rgba(15,42,68,.55)}
-.product-media{aspect-ratio:1;margin-bottom:12px;overflow:hidden;border-radius:16px;background:var(--sky)}
-.product-card:nth-child(4n+2) .product-media{background:var(--peri)}
-.product-card:nth-child(4n+3) .product-media{background:var(--aqua)}
-.product-card:nth-child(4n+4) .product-media{background:var(--mist)}
-.product-media img{width:100%;height:100%;object-fit:contain;transform:scale(1.18);transition:transform .7s var(--ease)}
-.product-card:hover .product-media img{transform:scale(1.26)}
+.product-card{padding:20px 16px 22px;border-top:6px solid var(--sky)}
+.product-card:nth-child(4n+2){border-top-color:var(--peri)}
+.product-card:nth-child(4n+3){border-top-color:var(--aqua)}
+.product-card:nth-child(4n+4){border-top-color:var(--mist)}
 .product-line{padding-inline:6px;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
 .product-card h3{padding-inline:6px;font-size:17px;font-weight:700;line-height:1.3;letter-spacing:-.02em;color:var(--deep)}
 .product-card p{padding-inline:6px;font-size:14.5px;line-height:1.5;color:var(--muted)}
 .product-foot{display:grid;gap:14px;margin-top:24px}
-.team-products{display:none}
 @media (min-width:760px){
   .product-grid{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);gap:18px;overflow:visible;margin-inline:0;padding:0}
   .product-foot{grid-template-columns:1fr auto;align-items:center}
 }
 @media (min-width:900px){
   .shelf-section{padding-top:128px}
-  .team-products{display:flex;align-items:flex-end;height:320px;margin:12px 0 0 -40px}
-  .team-products img{width:260px;height:auto;margin-right:-168px}
-  .team-products img:nth-child(2){width:330px;margin-right:-200px;position:relative;z-index:1}
 }
 
 /* Our work: a home teaser and a separate gallery page */
@@ -354,10 +354,7 @@ html[lang=ko] .work-hero h1,html[lang=zh-HK] .work-hero h1{font:700 clamp(30px,7
 .signature li>a{display:grid;gap:4px;color:var(--deep)}
 .signature figure{position:relative;margin:0 0 12px;aspect-ratio:3/4;overflow:hidden;border-radius:20px;background:var(--sky)}
 .signature img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
-.signature li:nth-child(1) img{object-position:80% 25%}
-.signature li:nth-child(2) img{object-position:42% 25%}
-.signature li:nth-child(3) img{object-position:50% 20%}
-.signature li:nth-child(4) img{object-position:50% 25%}
+.signature img{object-position:50% 22%}
 .signature li>a:hover img{transform:scale(1.05)}
 .signature figcaption,.faq-photo figcaption,.cta-photo figcaption{position:absolute;left:10px;bottom:10px;padding:3px 8px;border-radius:7px;background:rgba(255,255,255,.86);font-size:10.5px;font-weight:600;color:var(--muted)}
 .sig-no{font:700 12px var(--sans);letter-spacing:.12em;color:var(--blue)}
