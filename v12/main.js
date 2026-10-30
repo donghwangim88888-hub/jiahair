@@ -17,59 +17,6 @@
       if (target) location.replace(target.href);
     }
   }
-  const service = document.getElementById('service');
-  const preferred = document.getElementById('preferred');
-  const sms = document.getElementById('sms-builder');
-  const stylist = document.getElementById('stylist');
-  const consultation = document.getElementById('consultation');
-  const reference = document.getElementById('reference');
-  const referenceField = document.getElementById('reference-field');
-  const referenceClear = document.getElementById('reference-clear');
-  // The enquiry form lives on the home page only; the work page links back to it with ?style=.
-  if (sms) {
-    function updateSMS() {
-      const message = config.sms.replace('{service}', service.value || config.anyService)
-        .replace('{time}', preferred.value.trim() || config.timeUnset)
-        .replace('{stylist}', stylist.value.trim() || config.stylistUnset)
-        .replace('{consultation}', consultation.value)
-        .replace('{reference}', reference.value ? config.referenceSentence.replace('{reference}', reference.value) : '');
-      // iOS uses &body after the recipient; other handlers use ?body.
-      const appleMobile = /iPhone|iPad|iPod/.test(navigator.userAgent) ||
-        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-      const href = 'sms:' + config.phone + (appleMobile ? '&body=' : '?body=') + encodeURIComponent(message);
-      sms.href = href;
-      document.querySelectorAll('a[href^="sms:"]').forEach(link => { link.href = href; });
-    }
-    function setReference(value) {
-      reference.value = value;
-      referenceField.hidden = !value;
-      updateSMS();
-    }
-    service.addEventListener('change', updateSMS);
-    preferred.addEventListener('input', updateSMS);
-    stylist.addEventListener('input', updateSMS);
-    consultation.addEventListener('change', updateSMS);
-    stylist.addEventListener('change', updateSMS);
-    document.querySelectorAll('[data-stylist]').forEach(link => {
-      link.addEventListener('click', () => {
-        stylist.value = link.dataset.stylist;
-        updateSMS();
-      });
-    });
-    referenceClear.addEventListener('click', () => setReference(''));
-    document.querySelectorAll('[data-gallery]').forEach(link => {
-      link.addEventListener('click', () => setReference(link.dataset.gallery));
-    });
-    document.querySelectorAll('[data-service]').forEach(link => {
-      link.addEventListener('click', () => {
-        service.value = link.dataset.service;
-        updateSMS();
-      });
-    });
-    let style = '';
-    try { style = (new URLSearchParams(location.search).get('style') || '').slice(0, 80); } catch (_) { /* Older browsers: no prefill. */ }
-    if (style) setReference(style); else updateSMS();
-  }
 
   // Enhance plain anchor links into keyboard-accessible tabs; no-JS shows all prices.
   const tabs = [...document.querySelectorAll('[data-category]')];
