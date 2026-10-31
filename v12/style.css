@@ -96,11 +96,11 @@ html[lang=ko] .hero h1 em,html[lang=zh-HK] .hero h1 em{font-style:normal;color:v
 .intro{font-size:18px;line-height:1.7;max-width:27em;color:var(--muted)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .hero-actions .button{flex:1 1 auto}
-@media (min-width:600px){.hero-actions .button{flex:0 0 auto}}
-/* Jia's and Jessie's Instagram under the booking buttons: full width on phones; from 600px the divider matches the button row */
+/* Jia's and Jessie's Instagram under the booking buttons. On phones everything stacks full width; from 600px the two
+   buttons and the two pills line up as four equal cells, 12px apart, as wide as the longest label needs */
 .hero-ig{margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
 @media (max-width:599px){.hero-ig .ig-pills{width:auto}}
-@media (min-width:600px){.hero-cta{width:fit-content}}
+@media (min-width:600px){.hero-cta{width:fit-content}.hero-actions{display:grid;grid-template-columns:1fr 1fr}.hero-ig .ig-pills{width:auto}}
 @media (min-width:760px){
   .hero{display:grid;align-items:center;min-height:clamp(560px,52vw,780px);overflow:hidden}
   .hero-media{position:absolute;inset:0 0 0 auto;width:min(58%,980px);aspect-ratio:auto}
@@ -261,14 +261,15 @@ html[lang=ko] .work-hero h1,html[lang=zh-HK] .work-hero h1{font:700 clamp(30px,7
 .row-book:hover,.row-book:focus-visible{background:var(--blue);color:#fff}
 .row-book .arrow{width:14px;height:14px}
 /* A stylist's own Instagram: pink pill with the handle, under the home hero's buttons and on work.html */
-.stylist-ig{position:relative;z-index:1;justify-self:start;display:inline-flex;align-items:center;gap:12px;margin-top:10px;padding:9px 18px 9px 10px;border-radius:16px;background:#fff6fb;border:1.5px solid #f6c6de;color:var(--ink);font-weight:700;font-size:16px;line-height:1.25;transition:transform .25s var(--ease),border-color .25s}
+.stylist-ig{position:relative;z-index:1;justify-self:start;display:inline-flex;align-items:center;gap:12px;margin-top:10px;min-height:58px;padding:9px 18px 9px 10px;border-radius:14px;background:#fff6fb;border:1.5px solid #f6c6de;color:var(--ink);font-weight:700;font-size:16px;line-height:1.25;transition:transform .25s var(--ease),border-color .25s}
 .stylist-ig:hover{transform:translateY(-1px);border-color:#ec8cc0}
 .stylist-ig .ig-icon{width:34px;height:34px}
 .stylist-ig small{display:block;font-size:12.5px;font-weight:600;color:var(--muted)}
 .ig-card-links{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px}
-/* Jessie's pill sits under Jia's, both as wide as the longer one */
-.ig-pills{display:grid;gap:10px;width:fit-content}
+/* Jia's and Jessie's pills: stacked on phones, side by side in two equal columns from 600px */
+.ig-pills{display:grid;gap:12px;width:fit-content}
 .ig-pills .stylist-ig{justify-self:stretch;margin-top:0}
+@media (min-width:600px){.ig-pills{grid-template-columns:1fr 1fr}}
 /* Korean wraps between words, not inside them (e.g. 예약, 원하는). */
 html[lang=ko] body{word-break:keep-all;overflow-wrap:anywhere}
 @media (max-width:419px){html[lang=zh-HK] .languages a{padding:0 8px}}
