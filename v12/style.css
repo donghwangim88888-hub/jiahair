@@ -97,11 +97,10 @@ html[lang=ko] .hero h1 em,html[lang=zh-HK] .hero h1 em{font-style:normal;color:v
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .hero-actions .button{flex:1 1 auto}
 @media (min-width:600px){.hero-actions .button{flex:0 0 auto}}
-/* Jia's and Jessie's Instagram under the booking buttons: stacked on phones; from 600px two equal pills, about as wide as the buttons */
+/* Jia's and Jessie's Instagram under the booking buttons: full width on phones; from 600px the divider matches the button row */
 .hero-ig{margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
-.hero-ig .ig-pills{display:grid;gap:10px}
-.hero-ig .stylist-ig{justify-self:stretch;margin-top:0}
-@media (min-width:600px){.hero-ig{width:fit-content}.hero-ig .ig-pills{grid-template-columns:1fr 1fr;gap:12px}}
+@media (max-width:599px){.hero-ig .ig-pills{width:auto}}
+@media (min-width:600px){.hero-cta{width:fit-content}}
 @media (min-width:760px){
   .hero{display:grid;align-items:center;min-height:clamp(560px,52vw,780px);overflow:hidden}
   .hero-media{position:absolute;inset:0 0 0 auto;width:min(58%,980px);aspect-ratio:auto}
@@ -248,7 +247,7 @@ html[lang=ko] .work-hero h1,html[lang=zh-HK] .work-hero h1{font:700 clamp(30px,7
 /* Motion: gentle, and only when the visitor allows it */
 @media (prefers-reduced-motion:no-preference){
   .hero-inner>*{animation:rise .9s var(--ease) both}
-  .hero-inner>:nth-child(2){animation-delay:.08s}.hero-inner>:nth-child(3){animation-delay:.16s}.hero-inner>:nth-child(4){animation-delay:.24s}.hero-inner>:nth-child(5){animation-delay:.28s}.hero-inner>:nth-child(6){animation-delay:.34s}
+  .hero-inner>:nth-child(2){animation-delay:.08s}.hero-inner>:nth-child(3){animation-delay:.16s}.hero-inner>:nth-child(4){animation-delay:.24s}
   .hero-media img{animation:settle 1s var(--ease) both}
   .js .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
   .js .reveal.in{opacity:1;transform:none}
@@ -267,9 +266,9 @@ html[lang=ko] .work-hero h1,html[lang=zh-HK] .work-hero h1{font:700 clamp(30px,7
 .stylist-ig .ig-icon{width:34px;height:34px}
 .stylist-ig small{display:block;font-size:12.5px;font-weight:600;color:var(--muted)}
 .ig-card-links{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px}
-.ig-card-links .stylist-ig{margin-top:0}
-/* Jia's and Jessie's pills stay together on their own row */
-.ig-pills{display:flex;flex-wrap:wrap;gap:10px 12px;flex-basis:100%}
+/* Jessie's pill sits under Jia's, both as wide as the longer one */
+.ig-pills{display:grid;gap:10px;width:fit-content}
+.ig-pills .stylist-ig{justify-self:stretch;margin-top:0}
 /* Korean wraps between words, not inside them (e.g. 예약, 원하는). */
 html[lang=ko] body{word-break:keep-all;overflow-wrap:anywhere}
 @media (max-width:419px){html[lang=zh-HK] .languages a{padding:0 8px}}
