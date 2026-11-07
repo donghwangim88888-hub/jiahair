@@ -311,3 +311,66 @@ html[lang=ko] body{word-break:keep-all;overflow-wrap:anywhere}
 @media (max-width:419px){html[lang=zh-HK] .languages a{padding:0 8px}}
 /* "CHATSWOOD · SYDNEY" makes the English logo the widest; tighten it on phones so the header never scrolls sideways (was 21px too wide at 360px). */
 @media (max-width:419px){html[lang=en] .brand-sub{letter-spacing:.16em}html[lang=en] .languages a{padding:0 9px}}
+
+/* Christmas 2026 offers (xmas_copy.py): a slim bar above the header that opens the three offers, and a small note on the
+   colour, foils and perm lists. main.js shows them only until their end dates. */
+.xmas[hidden],.xmas [hidden],.xmas-note[hidden]{display:none!important}
+.xmas{position:relative;overflow:hidden;background:var(--deep);color:var(--on-deep)}
+.xmas-toggle::before,.xmas-toggle::after{content:'';position:absolute;inset:-120px 0 0;pointer-events:none;background-image:radial-gradient(circle at 14px 22px,rgba(255,255,255,0.6) 0 1.4px,transparent 2.0px),radial-gradient(circle at 71px 8px,rgba(255,255,255,0.6) 0 1.4px,transparent 2.0px),radial-gradient(circle at 103px 61px,rgba(255,255,255,0.6) 0 1.4px,transparent 2.0px),radial-gradient(circle at 38px 94px,rgba(255,255,255,0.6) 0 1.4px,transparent 2.0px),radial-gradient(circle at 86px 104px,rgba(255,255,255,0.6) 0 1.4px,transparent 2.0px);background-size:120px 120px}
+.xmas-toggle::after{background-image:radial-gradient(circle at 52px 40px,rgba(255,255,255,0.4) 0 1px,transparent 1.6px),radial-gradient(circle at 9px 71px,rgba(255,255,255,0.4) 0 1px,transparent 1.6px),radial-gradient(circle at 117px 30px,rgba(255,255,255,0.4) 0 1px,transparent 1.6px),radial-gradient(circle at 63px 85px,rgba(255,255,255,0.4) 0 1px,transparent 1.6px)}
+/* Falling snow stays inside the bar; the bar's own content sits above it */
+.xmas-toggle{position:relative;overflow:hidden}
+.xmas-toggle>*{position:relative;z-index:1}
+.santa{display:block;flex-shrink:0;width:30px;height:30px}
+.xmas-toggle .santa{width:30px;height:30px;margin:-4px -2px -4px 0}
+.xmas-toggle{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 10px;width:100%;min-height:48px;padding:9px var(--gutter);border:0;background:none;color:inherit;font-size:14.5px;font-weight:600;line-height:1.45;text-align:center;cursor:pointer}
+.xmas-text{text-wrap:balance}
+.xmas-tag{padding:3px 10px;border-radius:99px;background:#c8323c;color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em}
+html[lang=en] .xmas-tag{text-transform:uppercase;letter-spacing:.12em;font-size:11px}
+.xmas-more{display:inline-flex;align-items:center;gap:7px;color:var(--on-deep-muted);font-weight:700;white-space:nowrap}
+.xmas-more::after{content:'';width:6px;height:6px;border:solid currentColor;border-width:0 2px 2px 0;transform:translateY(-2px) rotate(45deg);transition:transform .25s}
+.xmas-toggle[aria-expanded=true] .xmas-more::after{transform:translateY(1px) rotate(-135deg)}
+.xmas-toggle:hover .xmas-more{color:#fff}
+.xmas-panel{background:#fff;border-bottom:1px solid var(--line);padding-block:24px 28px;animation:panel .5s var(--ease)}
+.xmas-hello{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.xmas-hello .santa{width:58px;height:58px;filter:drop-shadow(0 2px 3px rgba(15,42,68,.18))}
+.xmas-hello p{display:grid;gap:2px;font-size:14.5px;color:var(--muted);line-height:1.45}
+.xmas-hello strong{font:400 34px/1.05 var(--serif);color:#b8323c;letter-spacing:-.01em}
+html[lang=ko] .xmas-hello strong,html[lang=zh-HK] .xmas-hello strong{font:700 24px/1.25 var(--sans);letter-spacing:-.02em}
+.xmas-offers{display:grid;gap:10px}
+.xmas-offers li{display:grid;grid-template-columns:72px minmax(0,1fr);gap:14px;align-items:start;padding:18px;border-radius:18px;background:var(--mist)}
+.xmas-big{font:400 34px/1 var(--serif);color:#b8323c;letter-spacing:-.01em}
+html[lang=zh-HK] .xmas-big{font:700 26px/1.1 var(--sans)}
+.xmas-offers strong{display:block;font-size:16.5px;line-height:1.4;color:var(--deep)}
+.xmas-offers p{font-size:14.5px;line-height:1.6;color:var(--muted);margin-top:4px}
+.xmas-terms{font-size:13px;line-height:1.6;color:var(--muted);margin-top:16px;max-width:62em}
+.xmas-actions{display:grid;gap:10px;margin-top:18px}
+.xmas-note{display:flex;align-items:center;gap:8px;width:fit-content;margin-top:16px;padding:6px 13px;border-radius:99px;background:#fdeeee;color:#a3262f;font-size:13.5px;font-weight:700;line-height:1.4}
+.xmas-note::before{content:'';width:7px;height:7px;border-radius:50%;background:currentColor;flex-shrink:0}
+@media (min-width:600px){.xmas-actions{display:flex;flex-wrap:wrap}}
+@media (min-width:760px){
+  .xmas-panel{padding-block:32px 36px}
+  .xmas-offers{grid-template-columns:repeat(3,1fr);gap:14px}
+  .xmas-offers li{grid-template-columns:1fr;gap:12px;padding:24px}
+  .xmas-big{font-size:46px}
+  html[lang=zh-HK] .xmas-big{font-size:34px}
+}
+/* Christmas card at the hero photo's bottom-right corner, clear of the model's face (on phones it overlaps the photo's lower edge) */
+.xmas-card{position:relative;z-index:2;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;column-gap:12px;row-gap:6px;width:fit-content;max-width:calc(100% - 2*var(--gutter));margin:-40px var(--gutter) 0 auto;padding:12px 18px 12px 12px;border:0;border-radius:18px;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 18px 40px -22px rgba(15,42,68,.55);color:var(--ink);text-align:left;cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s}
+.xmas-card:hover{transform:translateY(-2px);box-shadow:0 22px 44px -22px rgba(15,42,68,.6)}
+.xmas-card .santa{width:48px;height:48px;grid-row:span 2;filter:drop-shadow(0 2px 2px rgba(15,42,68,.16))}
+.xmas-card-copy{display:grid;gap:1px;line-height:1.35}
+.xmas-card-copy small{font-size:11.5px;font-weight:700;letter-spacing:.06em;color:#b8323c}
+html[lang=en] .xmas-card-copy small{text-transform:uppercase;letter-spacing:.12em;font-size:10.5px}
+.xmas-card-copy strong{font-size:16.5px;color:var(--deep);letter-spacing:-.01em}
+.xmas-card-copy span{font-size:13px;color:var(--muted)}
+.xmas-card-go{grid-column:2;font-size:13.5px;font-weight:700;color:var(--blue)}
+@media (min-width:760px){.xmas-card{position:absolute;right:32px;bottom:32px;margin:0;width:340px;padding:16px 20px 16px 16px}.xmas-card .santa{width:64px;height:64px}.xmas-card-copy strong{font-size:18px}}
+/* Santa hat on the JIA wordmark while the offers run (main.js adds .xmas-on) */
+.xmas-on .brand-jia{position:relative}
+.xmas-on .brand-jia::before{content:'';position:absolute;left:-.2em;top:-.5em;width:.78em;height:.62em;transform:rotate(-14deg);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 32'%3E%3Cpath d='M4 26C4 13 12 5 22 5c7 0 12 4 15 11l-2 10Z' fill='%23d6363f'/%3E%3Cpath d='M22 5c7 0 12 4 15 11l-3 1c-2-5-6-8-11-9Z' fill='%23b82a33'/%3E%3Crect x='1' y='22' width='36' height='8' rx='4' fill='%23fff' stroke='%23e3ebf2'/%3E%3Ccircle cx='35' cy='17' r='4.4' fill='%23fff' stroke='%23e3ebf2'/%3E%3C/svg%3E") center/contain no-repeat;pointer-events:none}
+@media (prefers-reduced-motion:no-preference){
+  .xmas-toggle::before{animation:snow 16s linear infinite}
+  .xmas-toggle::after{animation:snow 26s linear infinite}
+}
+@keyframes snow{to{transform:translateY(120px)}}

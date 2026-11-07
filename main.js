@@ -64,6 +64,38 @@
     });
   }
 
+  // Christmas offers: each part shows only before its data-until date in Sydney, so it disappears on its own.
+  const timed = document.querySelectorAll('[data-until]');
+  if (timed.length) {
+    let today;
+    try {
+      today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Australia/Sydney', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+    } catch (_) {
+      today = new Date().toISOString().slice(0, 10);
+    }
+    timed.forEach(el => { el.hidden = !(today < el.dataset.until); });
+  }
+  const xmasToggle = document.querySelector('.xmas-toggle');
+  if (xmasToggle && !xmasToggle.closest('.xmas').hidden) {
+    // While the offers run, the logo wears a Santa hat (style.css).
+    document.documentElement.classList.add('xmas-on');
+    const panel = document.getElementById(xmasToggle.getAttribute('aria-controls'));
+    const more = xmasToggle.querySelector('.xmas-more');
+    function setOpen(open) {
+      xmasToggle.setAttribute('aria-expanded', String(open));
+      panel.hidden = !open;
+      more.textContent = open ? xmasToggle.dataset.less : xmasToggle.dataset.more;
+    }
+    xmasToggle.addEventListener('click', () => setOpen(xmasToggle.getAttribute('aria-expanded') !== 'true'));
+    // The card on the hero photo opens the same panel and brings it into view.
+    const card = document.querySelector('.xmas-card');
+    if (card) card.addEventListener('click', () => {
+      setOpen(true);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      xmasToggle.focus({ preventScroll: true });
+    });
+  }
+
   // Presentation only: header shadow, floating booking bar after the first screen, scroll reveals.
   const header = document.getElementById('site-header');
   const bar = document.querySelector('.booking-bar');
